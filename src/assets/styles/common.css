@@ -1,0 +1,39 @@
+p {
+    color: #ffffff;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+.error-message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #d9534f;
+}
+
+.success-message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #28a745;
+}
+
+.action-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #009688;
+}
+
+.action-button:hover {
+    background-color: #01796b;
+}
+
+.action-button:disabled {
+    background-color: #969696;
+}
