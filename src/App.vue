@@ -14,6 +14,7 @@
         :uploadedFile="uploadedFile"
         :processErrorMessage="processErrorMessage"
         @processComplete="handleProcessComplete"
+        @clearSuccessMessage="clearSuccessMessage"
       />
 
     </div>
@@ -55,6 +56,9 @@ export default {
       } else {
         this.responseData = responseData;
       }
+    },
+    clearSuccessMessage() {
+      this.successMessage = "";
     },
   },
 };

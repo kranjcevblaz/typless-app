@@ -20,7 +20,7 @@ export default {
   props: {
     uploadedFile: Object,
   },
-  emits: ["processComplete"],
+  emits: ["processComplete", "clearSuccessMessage"],
   data() {
     return {
       loading: false,
@@ -29,6 +29,8 @@ export default {
   },
   methods: {
     processDocument() {
+      this.$emit("processComplete", { loading: false, responseData: [], error: "" });
+      this.$emit("clearSuccessMessage");
       if (!this.uploadedFile) {
         this.processErrorMessage = "No file to process!";
         return;
@@ -70,6 +72,7 @@ export default {
             const responseData = this.mapResponseData(json.extracted_fields);
             this.loading = false;
             this.$emit("processComplete", { loading: false, responseData, error: "" });
+            this.$emit("clearSuccessMessage");
           })
           .catch((err) => {
             this.loading = false;
